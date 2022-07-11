@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 class MainRepository(val roomDao: RoomDao) {
 
@@ -68,6 +69,7 @@ class MainRepository(val roomDao: RoomDao) {
             }
             override fun onFailure(call: Call<List<IssueModelItem>>, t: Throwable) {
                 commentlistflow.value = ApiData.failed
+                Log.e("TAG", "onFailure: ${t.message}", )
             }
         })
 

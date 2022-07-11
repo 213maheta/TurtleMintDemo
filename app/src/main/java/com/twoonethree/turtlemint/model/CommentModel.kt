@@ -6,7 +6,7 @@ data class CommentModelItem(
     val body: String,
     val created_at: String,
     val html_url: String,
-    val id: Int,
+    val id: Long,
     val issue_url: String,
     val node_id: String,
     val performed_via_github_app: Any,
